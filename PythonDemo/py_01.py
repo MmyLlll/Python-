@@ -11,7 +11,7 @@ print("靓子")
 (user) = 1
 print(user)
 
-#检测数据类型的方法
+#检测数据类型的方法 type()
 num = 1
 print(type(num))
 
