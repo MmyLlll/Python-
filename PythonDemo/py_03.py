@@ -45,3 +45,35 @@ print(st[2:4])
 print(st[-1::-1])
 print(st[:-1])
 print(st[1:6:2])
+
+#字符串常见操作
+#fine(子字符串，开始位置下标，结束位置下标)：检测某个字符或字符串是否包含在字符串当中，如果在就返回下标位置，如果不在就返回-1
+love  = 'miyou'
+print(love.find('mi'))
+
+#index(子字符串，开始位置下标，结束位置下标):检测某个字符或字符串是否包含在字符当中，如果在就返回首字符的下标位置，否则就会报错
+
+#find和inex的区别：find 没找到返回-1不影响程序的进一步执行，index没找到则会报错终止程序的运行
+
+#count（），返回某个字符或字符串在整个字符串中出现的次数，没有就返回0
+
+#startSwitch（）/endSwitch（）：判断是不是以某个字符串开头/结尾，是的就返回true，不是返回false，如果设置开始结束为止，则在指定范围内检查
+
+#isupper（）：检查字符串中所有字母是否都为大写，是就返回true
+
+#replace（）：字符串替换
+st = '门前大桥下，游过一群鹅'
+print(st.replace('鹅','鸭'))
+
+#split():指定分隔符分割字符串,以列表的形式返回
+rst = 'hello.python'
+print(rst.split('.'))
+
+#capitalize():第一个字符大写
+print(rst.capitalize())
+
+#lower():大写字母专为小写
+
+#upper():小写字母转为大写
+print((rst.upper()).lower())
+
