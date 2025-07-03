@@ -14,7 +14,7 @@ str = 'hellopython'
 for i in str:
    print(i)
 
-#range()函数   用来记录循环次数，相当于计数器  range(start,top,step),单参数代表循环次数，双参数是循环的凯斯和结尾
+#range()函数   用来记录循环次数，相当于计数器  range(start,top,step),单参数代表循环次数，双参数是循环的开始和结尾
 for i in range(1,6):
    print(i)
 
