@@ -50,8 +50,8 @@ def add(a,b):
     return a+b
 print(add(1,3))
 
-add = lambda a,b,c:a+b+c            #匿名函数
-print(add(1,3,5))
+addd = lambda a,b,c:a+b+c            #匿名函数
+print(addd(1,3,5))
 
 #lambda的应用
 #lambda结合if判断
