@@ -58,17 +58,19 @@ print(pn())
 
 #内置全局变量_name_  语法 if _name_  == "__main__"  用来控制py文件在不同的场景执行不同的逻辑
 #文件在当前程序执行（自己执行）：__name__ = "__main__",文件被当做模块导入其他的py文件：__name__ = 模块名
-import pytest
-pytest.test()
-
 
 #包：项目结构中的文件（目录），将与联系的模块放在同一个文件夹下
 #与普通文件夹的区别，包文件夹自带_init_.py文件夹
 #作用：有效避免模块名冲突的问题，让结构更清晰
 #import导入包时，先执行_init_.py文件的代码
-#可以在报的_init_.py文件中先导入保内的.py文件
-import pack_01
-from pack_01 import *
-register.reg()
+#可以在包的_init_.py文件中先导入包 内的.py文件
+#__all__：本质上是一个列表，可一个控制要引入的东西（模块，函数...）列表里面的元素就代表要导入的模块,在使用from ....import *导入时就只能导入此列表中的元素
 
-#__all__:本质是一个列表，可以控制要引入的东西（函数，模块，功能）,列表里面的内容就是要引入（导入）的东西
+# print('方式一')
+# import pack_01
+
+# print('方式二')
+# from pack_01 import register
+
+print('方式三')
+from pack_01 import *

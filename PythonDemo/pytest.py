@@ -5,8 +5,4 @@ def test():
 if __name__  ==  "__main__":
     print('这是pytest自身执行多显示的内容')
     print('pytest2')
-test()
-
-import pack_01
-from pack_01 import *
-register.reg()
+    test()
