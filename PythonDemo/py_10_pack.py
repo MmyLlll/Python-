@@ -55,17 +55,27 @@ def test2(fn):
 test2(test1)
 
 #标准版装饰器
+def outer1(fn):         #外层函数，fn是形参但被传入的是被修饰的函数
+    def inner1(*arg):
+        print(arg,'登录.....')
+        fn(*arg)
+    return inner1
+
 def sent(a):
     print(f'{a}发消息')
-def outer1(fn):         #外层函数，fn是形参但被传入的是被修饰的函数
-    def inner1(a):
-        print('登录.....')
-        fn(a)
-    return inner1
 ot = outer1(sent)
 ot('月月鸟')
+
+def love1():
+    print('月月鸟的小靓子')
+ot1  = outer1(love1)
+ot1()
+
+
 #语法糖，格式：@装饰器名称
 @outer1             #装饰器后面不加（），必须和下面的函数紧贴着写
-def love():
+def love(a):
     print('最爱小米呦')
-love()
+love('月月鸟')
+
+
