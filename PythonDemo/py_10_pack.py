@@ -74,8 +74,23 @@ ot1()
 
 #语法糖，格式：@装饰器名称
 @outer1             #装饰器后面不加（），必须和下面的函数紧贴着写
-def love(a):
+def love(*a):
     print('最爱小米呦')
-love('月月鸟')
+love('月月鸟','小米呦')
 
+#多层装饰器,由内层向外层依次装饰
+def deco1(fn):
+    def inner1():
+        return "aaa"+fn()+'aaa'
+    return inner1
 
+def deco2(fn):
+    def inner2():
+        return "bbb"+fn()+'bbb'
+    return inner2
+
+@deco1
+@deco2
+def test():
+    return '月月鸟的小米呦'
+print(test())
