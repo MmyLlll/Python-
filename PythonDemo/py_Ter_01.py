@@ -54,3 +54,13 @@ pe2 = Person1('月月鸟','男',25)
 pe2.action()
 pe3 = Person1('小米呦','女',19)
 pe3.action()
+
+#python中的析构函数__dedl__()，删除对象时默认调用
+class cat:
+    def __init__(self):
+        print('__init__构造函数')
+    def __del__(self):
+        print('销毁对象')
+c = cat()
+del c
+print('销毁p继续向下执行')
