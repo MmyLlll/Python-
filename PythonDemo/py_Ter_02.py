@@ -41,7 +41,7 @@ class Person():
     def action2(self):
         print('奔跑')
 class girls(Person):
-    pass                  #占位符：给代码设置空白，可以没有任何带啊也不会报错（也可以用None）
+    pass                  #pass是占位符：给代码设置空白，可以没有任何带啊也不会报错（也可以用None）
 g = girls()
 g.action1()
 g.action2()

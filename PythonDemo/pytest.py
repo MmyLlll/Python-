@@ -24,3 +24,10 @@ def func2():
     print('这里是被装饰的函数')
     return 10
 print(func2())
+
+#读写操作测试
+
+f = open('test.txt','r+',encoding='utf-8')
+print(f.read())
+f.write("写入第七行数据")
+print(f.read())
