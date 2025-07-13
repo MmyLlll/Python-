@@ -31,3 +31,8 @@ f = open('test.txt','r+',encoding='utf-8')
 print(f.read())
 f.write("写入第七行数据")
 print(f.read())
+
+def func1(**kwarges):
+    print(kwarges)
+f = {'name1':'小米呦','name2':'月月鸟'}
+func1(f)
