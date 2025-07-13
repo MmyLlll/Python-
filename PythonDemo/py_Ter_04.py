@@ -98,3 +98,63 @@ print(next(it))
 print(next(it))
 #取完元素后再用用next（）会触发stopIteration异常
 #print(next(it))
+
+#可迭代对象包含__iter__()方法，迭代器包含__iter__()和__next__()方法
+#迭代器协议:对象必须提供一个next()，执行该方法要么返回下一项要么返回异常，结束迭代
+#自定义迭代器类
+class Test(object):
+    def __init__(self):
+        self.num = 1
+    def funa(self):
+        print(self.num)
+        self.num += 1
+te = Test()
+for i in range(5):
+    te.funa()
+
+class Myiterator(object):
+    def __init__(self):
+        self.num = 0
+    def __iter__(self):
+        return self                 #迭代器返回当前迭代器类的实例对象
+    def __next__(self):
+        if self.num == 10:
+            raise StopIteration
+        self.num += 1
+        return self.num
+my = Myiterator()
+print(isinstance(my,Iterable))
+for i in my:
+    print(i)
+
+#生成器（generator）：python中一边循环一边计算的机制叫做生成器
+#生成器表达式：类似于列表推导式（[i*5]for i in range(5）)
+gen = ([i*5]for i in range(5))                  #生成器表达式，仅把列表推导式的[]改为()
+for i in gen:
+    print(i)
+#python中使用了yiel关键字的函数就称之为生成器函数，
+# yield作用:1.类似于return，将指定值或者多个值返回给调用者  2.yield语句一次返回一个结果，在每个结果中间，挂起函数，执行next（）,再重新从挂起点继续往下执行
+#是函数中的断，并保存终端的状态
+def gen():
+    print('生成器函数')
+    yield ('a')
+    yield ('b')
+    yield ('c')
+g = gen()
+print(next(g))
+print(next(g))
+print(next(g))
+
+def gen1(m):
+    a = 0
+    li=[]
+    while a<m:
+        li.append(a)
+        yield a
+        a += 1
+    print('li:',li)
+# for i in gen1(5):
+#     print(i)
+print(list(gen1(5)))
+
+#可迭代对象包含迭代器，迭代器包含生成器
