@@ -58,6 +58,6 @@ from re import split
 
 # 四.原生字符串
 # 1.原生字符串：在字符串前面加上r，表示原生字符串，不进行转义。
-print(r"pro\tnt")
-res = re.match(r"pro\tnt","pro\tnt")
-print(res.group())
+# print(r"pro\tnt")
+# res = re.match(r"pro\tnt","pro\tnt")
+# print(res.group())
