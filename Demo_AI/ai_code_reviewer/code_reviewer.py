@@ -8,6 +8,7 @@ import os
 import sys
 import json
 from datetime import datetime
+
 from pathlib import Path
 from openai import OpenAI
 from config import Config
