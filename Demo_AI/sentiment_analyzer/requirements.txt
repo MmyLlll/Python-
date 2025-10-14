@@ -1,0 +1,5 @@
+requests>=2.28.0        # HTTP请求库（用于调用AI API）
+matplotlib>=3.5.0       # 数据可视化库（生成图表）
+pandas>=1.5.0           # 数据处理库（CSV文件操作）
+tabulate>=0.9.0         # 表格格式化库（美化命令行输出）
+python-dotenv>=0.19.0   # 环境变量管理（安全存储API密钥）
